@@ -1,10 +1,10 @@
 import math
 
 print('Diga quanto tempo durou o evento em segundos')
-s = int(input())
+segundos = int(input())
 
-resto_minuto = s%60
-minuto = s//60
+resto_minuto = segundos%60
+minuto = segundos//60
 resto_hora = minuto%60
 hora = minuto//60
 
