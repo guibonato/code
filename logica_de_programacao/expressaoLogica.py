@@ -1,6 +1,6 @@
 print('Expressoes logicas')
 
-num1 = int(input("D5igite o primeiro numero: "))
+num1 = int(input("Digite o primeiro numero: "))
 num2 = int(input("Digite o segundo numero: "))
 num3 = int(input("Digite o terceiro numero: "))
 
