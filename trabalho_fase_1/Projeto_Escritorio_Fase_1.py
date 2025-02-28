@@ -23,14 +23,17 @@ while resposta == 's':
         if 1 <= mes <= 12:
             temperatura = float(input('Informe a temperatura em Celsius: '))
             if -60 < temperatura < 50:
-                resposta = input('Deseja informar mais temperaturas? (s/n) ')
                 add_temp(mes, temperatura)
+                resposta = input('Deseja informar mais temperaturas? (s/n) ')
+                resposta = resposta.lower()
             else:
                 print('Temperatura inválida.')
                 resposta = input('Deseja informar alguma temperatura? (s/n) ')
+                resposta = resposta.lower()
         else:
             print('Mês inválido.')
             resposta = input('Deseja informar alguma temperatura? (s/n) ')
+            resposta = resposta.lower()
     except ValueError:
         print('São admitidos apenas números inteiros para o mês e números reais para a temperatura.')
 
@@ -57,7 +60,7 @@ for mes in lista_temperaturas:
         continue
 if contador_meses == 0:
     print('Nenhuma temperatura foi informada.')
-    exit()
+    exit() 
 
 media = media / contador_meses
 
