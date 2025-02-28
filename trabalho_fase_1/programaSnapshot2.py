@@ -17,21 +17,22 @@ print('Metereologia - Temperatura')
 resposta = 's'
 
 while resposta == 's':
-    
-    mes = int(input('Informe o mês (1 a 12): '))
-    # Garante que seja um mês válido
-    if 1 <= mes <= 12:
-        temperatura = float(input('Informe a temperatura em Celsius: '))
-        if -60 < temperatura < 50:
-            resposta = input('Deseja informar mais temperaturas? (s/n) ')
-            add_temp(mes, temperatura)
+    try:
+        mes = int(input('Informe o mês (1 a 12): '))
+        # Garante que seja um mês válido
+        if 1 <= mes <= 12:
+            temperatura = float(input('Informe a temperatura em Celsius: '))
+            if -60 < temperatura < 50:
+                resposta = input('Deseja informar mais temperaturas? (s/n) ')
+                add_temp(mes, temperatura)
+            else:
+                print('Temperatura inválida.')
+                resposta = input('Deseja informar alguma temperatura? (s/n) ')
         else:
-            print('Temperatura inválida.')
+            print('Mês inválido.')
             resposta = input('Deseja informar alguma temperatura? (s/n) ')
-
-    else:
-        print('Mês inválido.')
-        resposta = input('Deseja informar alguma temperatura? (s/n) ')
+    except ValueError:
+        print('São admitidos apenas números inteiros para o mês e números reais para a temperatura.')
 
 media = 0
 quentes = 0
