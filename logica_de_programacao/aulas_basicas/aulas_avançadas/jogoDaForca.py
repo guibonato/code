@@ -12,18 +12,26 @@ vidas = 5
 print("Bem-vindo ao jogo da forca!")
 palavra = gerar_palavra_aleatoria()
 palavra_secreta = ["_" for letra in palavra]
-print(" _ ".join(palavra_secreta))
+print(" ".join(palavra_secreta))
+banco_de_letras = []
 while vidas != 0:
-    
-    
-    
-    
-    """ letra = str(input("Digite uma letra: "))
+    letra = str(input('Digite uma letra: '))
     if letra in palavra:
         for i in range(len(palavra)):
             if letra == palavra[i]:
                 palavra_secreta[i] = letra
-        print(" _ ".join(palavra_secreta))
+        print(' '.join(palavra_secreta))
+        if not '_' in palavra_secreta:
+            exit('Você ganhou, parabéns!!!!')      
+        banco_de_letras.append(letra)
+        print('As letras que ja foram são: ' + ', '. join(banco_de_letras))
     else:
+        print('Essa letra não tem.')
+        banco_de_letras.append(letra)
+        print('As letras que ja foram são: ' + ', '. join(banco_de_letras))
         vidas -= 1
-        print(f"Você errou! Restam {vidas} vidas.") """
+        print(f'Você tem {vidas} apenas.')
+
+if vidas == 0:
+    print('Que pena você perdeu.')
+    
