@@ -7,3 +7,8 @@ w.close()
 """ w = open('teste.txt')
 print(w.read())
 w.close() """
+
+w = open('teste.txt')
+a = w.readlines()
+print(a)
+w.close()
